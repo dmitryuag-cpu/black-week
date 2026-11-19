@@ -317,7 +317,7 @@ details p{padding:0 14px 16px;font-size:15px}
     <div class="pr"><b style="color:var(--cy)">$250</b></div>
     <ul style="color:var(--gr)"><li>20 дней, 1–20 декабря, до праздников</li><li>4 живых созвона, раз в 5 дней</li><li>Показываю, как делаю видео через Claude</li><li>Разборы ваших работ, все созвоны в записи</li></ul>
     <p class="small">Предзапись только на Черной неделе. Мест ограниченно, чтобы я успевал разобрать каждого.</p>
-    <a class="btn cy" href="#wayforpay-claude">Записаться за $250 →</a>
+    <a class="btn cy" href="https://secure.wayforpay.com/button/bcc5d040acceb" target="_blank" rel="noopener">Записаться за $250 →</a>
   </article>
 
   <article class="step reveal" style="background:var(--pk);color:#fff">
@@ -326,7 +326,7 @@ details p{padding:0 14px 16px;font-size:15px}
     <h3>«TikTok с Claude»<br>+ Желтый пояс</h3>
     <div class="pr"><b id="s3price">$497</b><s>$747</s></div>
     <ul><li>От нуля до подключенной монетизации</li><li>Заграница: аккаунт под страну, ниши и связки для США и Европы</li><li>TikTok, YouTube Shorts, Facebook Reels</li><li>Чат учеников, около 70 человек</li><li>2 часа Zoom со мной + личная дорожная карта</li><li>Программа «TikTok с Claude»</li><li>Доступ к обучению навсегда</li></ul>
-    <a class="btn bk" href="#wayforpay-bundle" id="s3btn">Забрать за $497 →</a>
+    <a class="btn bk" href="https://secure.wayforpay.com/button/b75557fe82f6a" target="_blank" rel="noopener" id="s3btn">Забрать за $497 →</a>
     <a href="#ladder" style="color:#fff;font-weight:800;font-size:14px;text-align:center">Как растет цена ↓</a>
   </article>
 
@@ -479,7 +479,7 @@ function applyLang(){
   document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===LANG));
 }
 document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>{LANG=b.dataset.l;try{localStorage.setItem('bw-lang',LANG)}catch(e){}applyLang();render();if(typeof fit==='function')fit()}));
-const G=[{d:[23,24,25],dt:'23–25.11',dn:'пн–ср',pr:497,until:'до среды'},{d:[26,27],dt:'26–27.11',dn:'чт–пт · Черная пятница',pr:547,until:'до пятницы'},{d:[28,29],dt:'28–29.11',dn:'сб–вс · финал',pr:597,until:'до воскресенья'}];
+const G=[{d:[23,24,25],dt:'23–25.11',dn:'пн–ср',pr:497,until:'до среды',url:'https://secure.wayforpay.com/button/b75557fe82f6a'},{d:[26,27],dt:'26–27.11',dn:'чт–пт · Черная пятница',pr:547,until:'до пятницы',url:'https://secure.wayforpay.com/button/b8892fef3fc7b'},{d:[28,29],dt:'28–29.11',dn:'сб–вс · финал',pr:597,until:'до воскресенья',url:'https://secure.wayforpay.com/button/befd297ea2b79'}];
 const END=Date.UTC(2026,10,29,21,59,0); // 29.11 23:59 Киев
 function kday(){const k=new Date(Date.now()+2*36e5);const mo=k.getUTCMonth(),y=k.getUTCFullYear();if(y<2026||(y===2026&&mo<10))return 0;if(y>2026||mo>10)return 99;return k.getUTCDate()}
 function render(){
@@ -488,7 +488,7 @@ function render(){
   const g=G[i],pr=g.pr,nx=(!after&&i<G.length-1)?G[i+1].pr:null,$=x=>document.getElementById(x);
   $('tagSave').textContent='−$'+(747-pr);$('ylw').textContent='−'+Math.round((497-(pr-250))/497*100)+'%';
   ['heroPrice','s3price','barPrice','tagPrice'].forEach(id=>$(id).textContent='$'+pr);
-  $('s3btn').textContent=tr('Забрать за $')+pr+' →';
+  $('s3btn').href=g.url;$('s3btn').textContent=tr('Забрать за $')+pr+' →';
   $('heroNote').textContent=tr(before?'Claude + Желтый с 23.11':'Claude + Желтый сегодня');
   $('barNext').textContent=after?tr('Черная неделя закрыта'):nx?(tr(g.until)+tr(', потом $')+nx):tr('последние дни, до 29.11 23:59');
   $('lad').innerHTML=G.map((x,j)=>`<div class="lr ${!after&&j===i?'now':(j<i||after?'past':'')}"><span class="dd">${x.dt}</span><span>${tr(x.dn)}${!after&&!before&&j===i?tr(' · сейчас'):''}</span><span class="pp">$${x.pr}</span></div>`).join('');
