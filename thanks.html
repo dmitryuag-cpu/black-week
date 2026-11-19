@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Оплата пройшла · Dmitry UAg</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Manrope:wght@500;700;800&family=Unbounded:wght@900&display=swap">
+<style>
+:root{--bk:#0D0D0D;--cy:#00E5E5;--pk:#FF1F5A;--ln:#2A2A2A;--gr:#BDBDBD}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;background:var(--bk);color:#fff;font-family:'Manrope',sans-serif;display:flex;justify-content:center;
+background-image:linear-gradient(rgba(0,229,229,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,229,.07) 1px,transparent 1px);background-size:56px 56px}
+.w{max-width:440px;width:100%;padding:18px 16px 32px;display:flex;flex-direction:column;gap:22px}
+header{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Unbounded',sans-serif;font-weight:900;font-size:18px;text-decoration:none;color:#fff}
+.lang{display:flex;border:2px solid var(--ln);border-radius:999px;overflow:hidden}
+.lang button{background:none;border:0;color:#8a8a8a;font:800 13px Manrope,sans-serif;padding:0 12px;min-height:40px;cursor:pointer}
+.lang button.on{background:var(--cy);color:var(--bk)}
+.ok{width:96px;height:96px;border-radius:999px;background:var(--cy);color:var(--bk);display:flex;align-items:center;justify-content:center;font:900 48px 'Unbounded',sans-serif;margin-top:20px;animation:pop .6s cubic-bezier(.2,.9,.3,1.5)}
+@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+h1{font-family:'Unbounded',sans-serif;font-weight:900;font-size:34px;line-height:1.05}
+h1 span{color:var(--cy)}
+.card{background:#141414;border:1px solid var(--ln);padding:20px;display:flex;flex-direction:column;gap:12px}
+.card b{font-size:18px}
+.card ol{padding-left:20px;display:flex;flex-direction:column;gap:8px;color:var(--gr)}
+.card li b{font-size:inherit;color:#fff}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:58px;border-radius:999px;background:var(--pk);color:#fff;text-decoration:none;font-weight:800;font-size:17px;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,31,90,.6)}60%{box-shadow:0 0 0 16px rgba(255,31,90,0)}}
+.sec{color:var(--cy);font-weight:800;text-align:center;text-decoration:none}
+.note{font-family:'Caveat',cursive;font-size:24px;color:var(--cy);text-align:center}
+.foot{color:#8a8a8a;font-size:12.5px;text-align:center;margin-top:auto}
+</style>
+</head>
+<body>
+<div class="w">
+  <header>
+    <a class="logo" href="./"><span style="color:var(--cy)">#</span>Dmitry<span style="color:var(--pk)">UAg</span></a>
+    <div class="lang"><button type="button" data-l="ua">UA</button><button type="button" data-l="ru">RU</button></div>
+  </header>
+  <div class="ok">✓</div>
+  <h1 data-ua="Оплата <span>пройшла!</span>" data-ru="Оплата <span>прошла!</span>">Оплата <span>пройшла!</span></h1>
+  <div class="card">
+    <b data-ua="Залишився 1 крок, щоб отримати доступ" data-ru="Остался 1 шаг, чтобы получить доступ">Залишився 1 крок, щоб отримати доступ</b>
+    <ol>
+      <li data-ua="Натисни кнопку нижче й напиши мені в Telegram" data-ru="Нажми кнопку ниже и напиши мне в Telegram">Натисни кнопку нижче й напиши мені в Telegram</li>
+      <li data-ua="Надішли скрин оплати, щоб я швидше знайшов платіж" data-ru="Пришли скрин оплаты, чтобы я быстрее нашел платеж">Надішли скрин оплати, щоб я швидше знайшов платіж</li>
+      <li data-ua="Я відкрию доступ і скажу, з чого почати" data-ru="Я открою доступ и скажу, с чего начать">Я відкрию доступ і скажу, з чого почати</li>
+    </ol>
+  </div>
+  <a class="btn" href="https://t.me/dmitry_uag" data-ua="Написати Дмитру в Telegram →" data-ru="Написать Дмитрию в Telegram →">Написати Дмитру в Telegram →</a>
+  <a class="sec" href="https://t.me/tiktok_uag" data-ua="Підписатися на канал Монетизація TikTok" data-ru="Подписаться на канал Монетизация TikTok">Підписатися на канал Монетизація TikTok</a>
+  <div class="note" data-ua="Хочеш? Маєш!" data-ru="Хочешь? Имеешь!">Хочеш? Маєш!</div>
+  <div class="foot">Dmitry UAg · TikTok Academy</div>
+</div>
+<script>
+let L='ua';try{const q=new URLSearchParams(location.search).get('lang');if(q==='ru'||q==='ua')L=q;else{const v=localStorage.getItem('bw-lang');if(v)L=v}}catch(e){}
+function apply(){document.querySelectorAll('[data-ua]').forEach(e=>e.innerHTML=e.dataset[L]);document.documentElement.lang=L==='ua'?'uk':'ru';document.title=L==='ua'?'Оплата пройшла · Dmitry UAg':'Оплата прошла · Dmitry UAg';document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===L))}
+document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>{L=b.dataset.l;try{localStorage.setItem('bw-lang',L)}catch(e){}apply()});
+apply();
+</script>
+</body>
+</html>
