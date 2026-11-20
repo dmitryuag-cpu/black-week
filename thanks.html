@@ -22,6 +22,9 @@ header{display:flex;justify-content:space-between;align-items:center}
 @keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
 h1{font-family:'Unbounded',sans-serif;font-weight:900;font-size:34px;line-height:1.05}
 h1 span{color:var(--cy)}
+.hero{display:flex;align-items:center;gap:16px;margin-top:14px}
+.hero .ok{width:76px;height:76px;flex:none;font-size:38px;margin-top:0}
+.hero h1{font-size:30px}
 .card{background:#141414;border:1px solid var(--ln);padding:20px;display:flex;flex-direction:column;gap:12px}
 .card b{font-size:18px}
 .card ol{padding-left:20px;display:flex;flex-direction:column;gap:8px;color:var(--gr)}
@@ -39,8 +42,7 @@ h1 span{color:var(--cy)}
     <a class="logo" href="./"><span style="color:var(--cy)">#</span>Dmitry<span style="color:var(--pk)">UAg</span></a>
     <div class="lang"><button type="button" data-l="ua">UA</button><button type="button" data-l="ru">RU</button></div>
   </header>
-  <div class="ok">✓</div>
-  <h1 data-ua="Оплата <span>пройшла!</span>" data-ru="Оплата <span>прошла!</span>">Оплата <span>пройшла!</span></h1>
+  <div class="hero"><div class="ok">✓</div><h1 data-ua="Оплата <span>пройшла!</span>" data-ru="Оплата <span>прошла!</span>">Оплата <span>пройшла!</span></h1></div>
   <div class="card">
     <b data-ua="Залишився 1 крок, щоб отримати доступ" data-ru="Остался 1 шаг, чтобы получить доступ">Залишився 1 крок, щоб отримати доступ</b>
     <ol>
