@@ -492,9 +492,9 @@ function render(){
   $('tagSave').textContent='−$'+(747-pr);$('ylw').textContent='−'+Math.round((497-(pr-250))/497*100)+'%';
   ['heroPrice','s3price','barPrice','tagPrice'].forEach(id=>$(id).textContent='$'+pr);
   $('s3btn').href=g.url;$('s3btn').textContent=tr('Забрать за $')+pr+' →';
-  $('heroNote').textContent=tr(before?'Claude + Желтый с 23.11':'Claude + Желтый сегодня');
+  $('heroNote').textContent=tr('Claude + Желтый сегодня');
   $('barNext').textContent=after?tr('Черная неделя закрыта'):nx?(tr(g.until)+tr(', потом $')+nx):tr('последние дни, до 29.11 23:59');
-  $('lad').innerHTML=G.map((x,j)=>`<div class="lr ${!after&&j===i?'now':(j<i||after?'past':'')}"><span class="dd">${x.dt}</span><span>${tr(x.dn)}${!after&&j===i?tr(before?' · ранний старт':' · сейчас'):''}</span><span class="pp">$${x.pr}</span></div>`).join('');
+  $('lad').innerHTML=G.map((x,j)=>`<div class="lr ${!after&&j===i?'now':(j<i||after?'past':'')}"><span class="dd">${before&&j===0?'21–25.11':x.dt}</span><span>${before&&j===0?'сб–ср':tr(x.dn)}${!after&&j===i?tr(before?' · ранний старт':' · сейчас'):''}</span><span class="pp">$${x.pr}</span></div>`).join('');
   if(after){document.body.classList.add('closed');$('tlabel').textContent=tr('Черная неделя закрыта')}
 }
 function tick(){let t=Math.max(0,END-Date.now());const d=Math.floor(t/864e5);t-=d*864e5;const h=Math.floor(t/36e5);t-=h*36e5;const m=Math.floor(t/6e4);t-=m*6e4;const s=Math.floor(t/1e3);const z=n=>String(n).padStart(2,'0');document.getElementById('d').textContent=d;document.getElementById('h').textContent=z(h);document.getElementById('m').textContent=z(m);document.getElementById('s').textContent=z(s)}
